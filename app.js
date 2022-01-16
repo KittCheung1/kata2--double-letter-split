@@ -1,27 +1,18 @@
 function splitOnDoubleLetter(input){
-//     const inputWord = [input];
+    let start = 0;
+    let word = "";
+    let arr =[];
 
-// console.log(inputWord);
-
-for (let i = 0; i < input.length; i++) {
-    
-    // console.log(input[i]);
-    if (input[i] === input[i-1]) {
-        console.log("hej");
-        input.splice(input[0],input[i-1]);
-        // input.splice(input[i], input.length);
+    for (let i = 0; i < input.length; i++) {
+        let temp = i+1;
+        if (input[i] === input[temp]) {
+            arr.push(input.slice(start, temp));
+            word = input.slice(temp, input.length);
+            start = temp; 
+        }
     }
-    else{
-        console.log("blä");
-    }
+    arr.push(word);
+    console.log(arr);
 }
 
-// for (const character of input) {
-//     if (character = ) {
-        
-//     }
-// }
-
-}
-
-splitOnDoubleLetter("letter");
+splitOnDoubleLetter("letterrs");
